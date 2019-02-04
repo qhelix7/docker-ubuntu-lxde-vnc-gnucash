@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
-MAINTAINER Doro Wu <fcwu.tw@gmail.com>
+# MAINTAINER Doro Wu <fcwu.tw@gmail.com>
+MAINTAINER Martin Mayne <helix7@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -21,6 +22,7 @@ RUN apt-get update \
         libreoffice firefox \
         fonts-wqy-microhei \
         language-pack-zh-hant language-pack-gnome-zh-hant firefox-locale-zh-hant libreoffice-l10n-zh-tw \
+        gnucash \
         nginx \
         python-pip python-dev build-essential \
         mesa-utils libgl1-mesa-dri \
@@ -44,3 +46,4 @@ WORKDIR /root
 ENV HOME=/home/ubuntu \
     SHELL=/bin/bash
 ENTRYPOINT ["/startup.sh"]
+
