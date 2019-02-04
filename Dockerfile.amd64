@@ -92,7 +92,7 @@ EXPOSE 80
 WORKDIR /root
 ENV HOME=/home/ubuntu \
     SHELL=/bin/bash \
-    DEBIAN_FRONTEND noninteractive
+    DEBIAN_FRONTEND=noninteractive
 
 RUN add-apt-repository -y ppa:sicklylife/gnucash \
     && apt-get update \
