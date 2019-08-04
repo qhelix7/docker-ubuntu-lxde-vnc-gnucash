@@ -119,7 +119,11 @@ ENV HOME=/home/ubuntu \
 
 RUN add-apt-repository -y ppa:sicklylife/gnucash \
     && apt-get update \
-    && apt-get install -y --no-install-recommends --allow-unauthenticated gnucash
+    && apt-get install -y --no-install-recommends --allow-unauthenticated \
+        libdbi libdbd-sqlite3 gnucash \
+    && apt autoclean -y \
+    && apt autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
 HEALTHCHECK --interval=30s --timeout=5s CMD curl --fail http://127.0.0.1:6079/api/health
 ENTRYPOINT ["/startup.sh"]
