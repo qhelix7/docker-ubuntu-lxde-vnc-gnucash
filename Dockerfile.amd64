@@ -120,7 +120,7 @@ ENV HOME=/home/ubuntu \
 RUN add-apt-repository -y ppa:sicklylife/gnucash \
     && apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
-        libdbi1 libdbd-sqlite3 gnucash \
+        libdbi1 libdbd-sqlite3 gnucash xdotool \
     && apt autoclean -y \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*
